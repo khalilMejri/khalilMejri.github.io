@@ -37,7 +37,6 @@ html {
   line-height: 175%;
   white-space: nowrap;
   overflow: hidden;
-  text-wrap: none;
   text-overflow: ellipsis;
 }
 .cameras ul {

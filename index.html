@@ -29,6 +29,13 @@
                 class="active"
                 >{{ formatName(camera.name) }}</span
               >
+              <button
+                v-if="camera.id == activeCameraId"
+                :title="formatName(camera.name)"
+                @click.stop="stopScan(camera)"
+              >
+                Stop
+              </button>
               <span
                 v-if="camera.id != activeCameraId"
                 :title="formatName(camera.name)"
