@@ -1,0 +1,178 @@
+<html>
+  <head>
+    <title>QR Code Scanner &ndash; Demo</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/3.3.3/adapter.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"
+    ></script>
+  </head>
+  <body>
+    <header class="header-bar">
+      <div class="branding">
+        <!-- <div id="site-title" class="assistive-text">
+          Professional Hair Labs
+        </div> -->
+        <!-- <div id="site-description" class="assistive-text">
+          World Leader In Cosmetic Bonding
+        </div> -->
+        <a class="" href="https://prohairlabs.com/"
+          ><img
+            class=" preload-me"
+            src="https://prohairlabs.com/wp-content/uploads/2019/07/Logo-updated-1.png"
+            srcset="
+              https://prohairlabs.com/wp-content/uploads/2019/07/Logo-updated-1.png 400w,
+              https://prohairlabs.com/wp-content/uploads/2019/07/Logo-updated-1.png 400w
+            "
+            width="400"
+            height="66"
+            sizes="400px"
+            alt="Professional Hair Labs"/><img
+            class="mobile-logo preload-me"
+            src="https://prohairlabs.com/wp-content/uploads/2019/07/Logo-updated-1.png"
+            srcset="
+              https://prohairlabs.com/wp-content/uploads/2019/07/Logo-updated-1.png 400w,
+              https://prohairlabs.com/wp-content/uploads/2019/07/Logo-updated-1.png 400w
+            "
+            width="400"
+            height="66"
+            sizes="400px"
+            alt="Professional Hair Labs"
+        /></a>
+      </div>
+    </header>
+    <div class="container">
+      <div class="service-box" data-gtm="contactBlock" style="padding: 0;;">
+        <div class="editor-content">
+          <header class="section-header no-border no-padding text-center">
+            <h1>
+              QR Code Scanning For Both Desktop And Mobile
+            </h1>
+            <p>
+              The QR Stuff QR Code Scanner is the perfect tool to scan your QR
+              codes anytime and anywhere. Now you can easily and simply
+              Generate, Download and Scan your QR codes all in one place –
+              Prohairlabs.com.
+            </p>
+            <h1 class="callout-text">
+              How it works?
+            </h1>
+            <div>
+              QR Scanner - Simply point the camera to the desired QR Code
+            </div>
+            <div class="preview-container">
+              <video id="preview"></video>
+            </div>
+            <!-- <div>
+              From April 1 to September 30 hours are 8 a.m. to 8 p.m. Monday
+              through Friday. Messages received on holidays and outside of our
+              business hours will be returned within one business day.
+            </div> -->
+          </header>
+        </div>
+      </div>
+    </div>
+    <div style="text-align: center; margin: 0 auto; padding-bottom: 32px">
+      <button type="button" class="btn">Scan QR Code</button>
+      <br />
+      <br />
+      <h1 id="start">Product Info</h1>
+      <b><a id="start" href="javascript:void(0)">#S5DSFFGD5DFG6SDF%SDFR</a></b>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Property</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="prop in properties">
+          <td>
+            <strong>{{ prop.mKey }}</strong>
+          </td>
+          <td>{{ prop.value }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- <div id="app">
+      <div class="sidebar">
+        <section class="cameras">
+          <h2>Cameras</h2>
+          <ul>
+            <li v-if="cameras.length === 0" class="empty">No cameras found</li>
+            <li v-for="camera in cameras">
+              <span
+                v-if="camera.id == activeCameraId"
+                :title="formatName(camera.name)"
+                class="active"
+                >{{ formatName(camera.name) }}</span
+              >
+              <button
+                v-if="camera.id == activeCameraId"
+                :title="formatName(camera.name)"
+                @click.stop="stopScan(camera)"
+              >
+                Stop
+              </button>
+              <span
+                v-if="camera.id != activeCameraId"
+                :title="formatName(camera.name)"
+              >
+                <a @click.stop="selectCamera(camera)">{{
+                  formatName(camera.name)
+                }}</a>
+              </span>
+            </li>
+          </ul>
+        </section>
+        <section class="scans">
+          <h2>Scans</h2>
+          <ul v-if="scans.length === 0">
+            <li class="empty">No scans yet</li>
+          </ul>
+          <transition-group name="scans" tag="ul">
+            <li v-for="scan in scans" :key="scan.date" :title="scan.content">
+              {{ scan.content }}
+            </li>
+          </transition-group>
+        </section>
+        <h2 id="start">Product Info</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="prop in properties">
+              <td>
+                <strong>{{ prop.mKey }}</strong>
+              </td>
+              <td>{{ prop.value }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="preview-container">
+        <video id="preview"></video>
+      </div>
+    </div> -->
+    <!-- <script type="text/javascript" src="app.js"></script> -->
+  </body>
+</html>
