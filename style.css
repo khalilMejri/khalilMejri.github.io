@@ -55,14 +55,14 @@ html {
   font-size: 16px;
   cursor: pointer;
 }
-
+/* 
 #app {
   background: #263238;
   display: flex;
   align-items: stretch;
   justify-content: stretch;
   height: 100%;
-}
+} */
 .sidebar {
   background: #eceff1;
   min-width: 50%;
@@ -132,7 +132,7 @@ html {
 }
 
 .error {
-  background-image: url(preview_2.png);
+  background-image: url(preview_2.png) !important;
 }
 
 /* table style */

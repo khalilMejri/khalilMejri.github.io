@@ -21,7 +21,89 @@
     ></script>
   </head>
   <body>
+    <header class="header-bar">
+      <div class="branding">
+        <a class="" href="https://prohairlabs.com/"
+          ><img
+            class=" preload-me"
+            src="https://prohairlabs.com/wp-content/uploads/2019/07/Logo-updated-1.png"
+            srcset="
+              https://prohairlabs.com/wp-content/uploads/2019/07/Logo-updated-1.png 400w,
+              https://prohairlabs.com/wp-content/uploads/2019/07/Logo-updated-1.png 400w
+            "
+            width="400"
+            height="66"
+            sizes="400px"
+            alt="Professional Hair Labs"/><img
+            class="mobile-logo preload-me"
+            src="https://prohairlabs.com/wp-content/uploads/2019/07/Logo-updated-1.png"
+            srcset="
+              https://prohairlabs.com/wp-content/uploads/2019/07/Logo-updated-1.png 400w,
+              https://prohairlabs.com/wp-content/uploads/2019/07/Logo-updated-1.png 400w
+            "
+            width="400"
+            height="66"
+            sizes="400px"
+            alt="Professional Hair Labs"
+        /></a>
+      </div>
+    </header>
     <div id="app">
+      <div class="container">
+        <div class="service-box" data-gtm="contactBlock" style="padding: 0;;">
+          <div class="editor-content">
+            <header class="section-header no-border no-padding text-center">
+              <h1>
+                QR Code Scanning For Both Desktop And Mobile
+              </h1>
+              <p>
+                The QR Stuff QR Code Scanner is the perfect tool to scan your QR
+                codes anytime and anywhere. Now you can easily and simply
+                Generate, Download and Scan your QR codes all in one place –
+                Prohairlabs.com.
+              </p>
+              <h1 class="callout-text">
+                How it works?
+              </h1>
+              <div>
+                QR Scanner - Simply point the camera to the desired QR Code
+              </div>
+              <div class="preview-container">
+                <video id="preview"></video>
+              </div>
+            </header>
+          </div>
+        </div>
+      </div>
+      <div style="text-align: center; margin: 0 auto; padding-bottom: 32px">
+        <button type="button" class="btn" @click.stop="startScan()">
+          Scan QR Code
+        </button>
+        <br />
+        <br />
+        <h1 id="start">Product Info</h1>
+        <b
+          ><a id="start" href="javascript:void(0)">#{{ code }} </a></b
+        >
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="prop in properties">
+            <td>
+              <strong>{{ prop.mKey }}</strong>
+            </td>
+            <td>{{ prop.value }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- <div id="app">
       <div class="sidebar">
         <section class="cameras">
           <h2>Cameras</h2>
@@ -83,7 +165,7 @@
       </div>
       <div class="preview-container">
         <video id="preview"></video>
-      </div>
+      </div> -->
     </div>
     <script type="text/javascript" src="app.js"></script>
   </body>
