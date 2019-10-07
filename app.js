@@ -84,6 +84,8 @@ var app = new Vue({
                 }
             }).catch(function (e) {
                 console.error(e);
+                $(".preview-container").addClass("error");
+
             });
         }
     }
