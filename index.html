@@ -86,7 +86,6 @@
           ><a id="start" href="javascript:void(0)">#{{ code }} </a></b
         >
       </div>
-
       <table>
         <thead>
           <tr>
@@ -103,69 +102,6 @@
           </tr>
         </tbody>
       </table>
-      <!-- <div id="app">
-      <div class="sidebar">
-        <section class="cameras">
-          <h2>Cameras</h2>
-          <ul>
-            <li v-if="cameras.length === 0" class="empty">No cameras found</li>
-            <li v-for="camera in cameras">
-              <span
-                v-if="camera.id == activeCameraId"
-                :title="formatName(camera.name)"
-                class="active"
-                >{{ formatName(camera.name) }}</span
-              >
-              <button
-                v-if="camera.id == activeCameraId"
-                :title="formatName(camera.name)"
-                @click.stop="stopScan(camera)"
-              >
-                Stop
-              </button>
-              <span
-                v-if="camera.id != activeCameraId"
-                :title="formatName(camera.name)"
-              >
-                <a @click.stop="selectCamera(camera)">{{
-                  formatName(camera.name)
-                }}</a>
-              </span>
-            </li>
-          </ul>
-        </section>
-        <section class="scans">
-          <h2>Scans</h2>
-          <ul v-if="scans.length === 0">
-            <li class="empty">No scans yet</li>
-          </ul>
-          <transition-group name="scans" tag="ul">
-            <li v-for="scan in scans" :key="scan.date" :title="scan.content">
-              {{ scan.content }}
-            </li>
-          </transition-group>
-        </section>
-        <h2 id="start">Product Info</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Property</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="prop in properties">
-              <td>
-                <strong>{{ prop.mKey }}</strong>
-              </td>
-              <td>{{ prop.value }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="preview-container">
-        <video id="preview"></video>
-      </div> -->
     </div>
     <script type="text/javascript" src="app.js"></script>
   </body>
