@@ -125,14 +125,14 @@ html {
   display: flex;
   width: 100%;
   overflow: hidden;
-  background-image: url(preview_1.png);
+  background-image: url(img/preview_1.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 50%;
 }
 
 .error {
-  background-image: url(preview_2.png) !important;
+  background-image: url(img/preview_2.png) !important;
 }
 
 /* table style */

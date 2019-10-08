@@ -10,7 +10,7 @@ var app = new Vue({
         code: null
     },
     mounted: function () {
-        console.log("Vue js application mounted successfully")
+        console.log("Vue-js application mounted successfully")
     },
     methods: {
         formatName: function (name) {
@@ -28,7 +28,8 @@ var app = new Vue({
 
         },
         startScan: function () {
-            $("html, body").animate({ scrollTop: $(document).height() }, 1000); var self = this;
+            var self = this;
+            $("html, body").animate({ scrollTop: $(document).height() }, 1000);
             self.scanner = new Instascan.Scanner({ video: document.getElementById('preview'), mirror: false, scanPeriod: 5 });
             self.scanner.addListener('scan', function (content, image) {
                 self.scans.unshift({ date: +(Date.now()), content: content });
@@ -36,21 +37,21 @@ var app = new Vue({
                 var codeBase64 = window.btoa(content)
                 self.code = content;
                 // make Ajax Call requesting the equivalent code  
-                $.ajax({
-                    type: 'POST',
-                    url: 'https://prohairlabs.azurewebsites.net/codes/scan/' + codeBase64,
-                    // url: '192.168.1.6:5001/codes/scan/' + codeBase64,
-                    success: function (data) {
-                        console.log(data)
-                        $("html, body").animate({ scrollTop: $(document).height() }, 1000); var self = this;
-                        // stop scan
-                        self.stopScan()
-                    },
-                    error: function (err) {
-                        console.log(err.statusText);
-                        self.stopScan()
-                    }
-                })
+                // $.ajax({
+                //     type: 'POST',
+                //     url: 'https://prohairlabs.azurewebsites.net/codes/scan/' + codeBase64,
+                //     // url: '192.168.1.6:5001/codes/scan/' + codeBase64,
+                //     success: function (data) {
+                //         console.log(data)
+                //         $("html, body").animate({ scrollTop: $(document).height() }, 1000); var self = this;
+                //         // stop scan
+                //         self.stopScan()
+                //     },
+                //     error: function (err) {
+                //         console.log(err.statusText);
+                //         self.stopScan()
+                //     }
+                // })
                 // do whatever with scanned code
                 self.properties = [Object];
                 var productInfos = {
@@ -70,6 +71,8 @@ var app = new Vue({
                     }
                 }
                 console.log(self.properties);
+                $("html, body").animate({ scrollTop: $(document).height() }, 1000);
+
 
             });
             Instascan.Camera.getCameras().then(function (cameras) {
