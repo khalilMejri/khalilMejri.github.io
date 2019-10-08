@@ -75,8 +75,21 @@
         </div>
       </div>
       <div style="text-align: center; margin: 0 auto; padding-bottom: 32px">
-        <button type="button" class="btn" @click.stop="startScan()">
+        <button
+          type="button"
+          class="btn"
+          v-if="isScanning != true"
+          @click.stop="startScan()"
+        >
           Scan QR Code
+        </button>
+        <button
+          type="button"
+          class="btn"
+          v-if="isScanning == true"
+          @click.stop="stopScan()"
+        >
+          Stop Scan
         </button>
         <br />
         <br />

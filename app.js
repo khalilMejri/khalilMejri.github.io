@@ -7,7 +7,8 @@ var app = new Vue({
         cameras: [],
         scans: [],
         properties: [Object],
-        code: null
+        code: null,
+        isScanning: false
     },
     mounted: function () {
         console.log("Vue-js application mounted successfully")
@@ -25,11 +26,13 @@ var app = new Vue({
                 // save last snapshot
             })
             this.activeCameraId = null;
-
+            this.isScanning = false;
         },
         startScan: function () {
             var self = this;
+
             $("html, body").animate({ scrollTop: $(document).height() }, 1000);
+            self.isScanning = true;
             self.scanner = new Instascan.Scanner({ video: document.getElementById('preview'), mirror: false, scanPeriod: 5 });
             self.scanner.addListener('scan', function (content, image) {
                 self.scans.unshift({ date: +(Date.now()), content: content });
